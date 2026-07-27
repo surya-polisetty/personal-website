@@ -3,417 +3,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
 
 <title>Surya Polisetty</title>
+<meta name="author" content="Surya Polisetty">
+<meta name="description" content="Surya Polisetty — co-founder and CTO of Mindlabs, building technology and business across hardware, software and AI.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://suryapolisetty.com">
+<meta property="og:title" content="Surya Polisetty">
+<meta property="og:description" content="Co-founder and CTO of Mindlabs, building technology and business across hardware, software and AI.">
+
+<meta name="theme-color" content="#fdfcf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191817" media="(prefers-color-scheme: dark)">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231b1b1a'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='21' fill='%23fdfcf9' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root{
+  --bg:#fdfcf9;
+  --ink:#1b1b1a;
+  --muted:#6b6a65;
+  --rule:#e6e3db;
+  --link:#35506b;
+  --link-hover:#1b1b1a;
 }
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#191817;
+    --ink:#e9e6df;
+    --muted:#a29e95;
+    --rule:#33302b;
+    --link:#9db8d6;
+    --link-hover:#f2efe8;
+  }
+}
+
+*{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
 
 body{
-    font-family:Inter,sans-serif;
-    color:#111;
-    background:#fff;
-    line-height:1.75;
+  margin:0 auto;
+  max-width:40rem;
+  padding:4.5rem 1.5rem 5rem;
+  background:var(--bg);
+  color:var(--ink);
+  font:400 1.1875rem/1.7 Georgia,"Times New Roman",Times,serif;
+  font-kerning:normal;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
 }
 
-.container{
-    width:min(1100px,92%);
-    margin:auto;
+/* ---- Masthead ---- */
+.masthead{
+  padding-bottom:1.8rem;
+  margin-bottom:2.4rem;
+  border-bottom:1px solid var(--rule);
+}
+h1{
+  margin:0;
+  font-size:2rem;
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-0.01em;
+}
+.lede{
+  margin:.55rem 0 0;
+  color:var(--muted);
+  font-size:1.1875rem;
+}
+.contact{
+  margin:1.15rem 0 0;
+  font-size:1.0625rem;
+  color:var(--muted);
+}
+.contact a{ white-space:nowrap; }
+.sep{ color:var(--rule); padding:0 .5em; }
+
+/* ---- Prose ---- */
+p{ margin:0 0 1.15rem; }
+.intro p:last-child{ margin-bottom:0; }
+
+a{
+  color:var(--link);
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:2px;
+}
+a:hover{ color:var(--link-hover); }
+a:focus-visible{
+  outline:2px solid var(--link);
+  outline-offset:2px;
+  border-radius:1px;
 }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:28px 0;
+/* ---- Sections ---- */
+section{ margin-top:2.8rem; }
+h2{
+  margin:0 0 1.3rem;
+  font-size:.8125rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  color:var(--muted);
 }
 
-nav .logo{
-    font-weight:700;
-    font-size:20px;
+/* ---- Built list ---- */
+.built p{ margin:0 0 1.05rem; }
+.built p:last-child{ margin-bottom:0; }
+
+/* ---- Interests ---- */
+.interests{
+  margin:0;
+  padding-left:1.15rem;
+  list-style:none;
+}
+.interests li{
+  margin-bottom:.6rem;
+  text-indent:-1.15rem;
+}
+.interests li:last-child{ margin-bottom:0; }
+.interests li::before{
+  content:"—";
+  color:var(--muted);
+  padding-right:.55rem;
 }
 
-nav ul{
-    display:flex;
-    gap:32px;
-    list-style:none;
+/* ---- CV entries ---- */
+.entry{
+  display:grid;
+  grid-template-columns:7rem 1fr;
+  gap:.2rem 1.6rem;
+  margin-bottom:1.7rem;
 }
-
-nav a{
-    text-decoration:none;
-    color:#555;
-    font-weight:500;
+.entry:last-child{ margin-bottom:0; }
+.when{
+  padding-top:.28rem;
+  color:var(--muted);
+  font-size:.9375rem;
+  font-variant-numeric:tabular-nums;
 }
+.what p{ margin:0; }
+.line{ margin-bottom:.25rem !important; }
+.org{ font-weight:700; }
+.note{ color:var(--muted); font-size:1.0625rem; line-height:1.6; }
 
-nav a:hover{
-    color:#000;
-}
-
-.hero{
-    padding:120px 0 110px;
-}
-
-.hero h1{
-    font-size:68px;
-    line-height:1.05;
-    font-weight:800;
-    letter-spacing:-2px;
-    max-width:900px;
-}
-
-.hero h1 span{
-    color:#2563eb;
-}
-
-.hero p{
-    margin-top:35px;
-    font-size:22px;
-    color:#555;
-    max-width:760px;
-}
-
-.buttons{
-    margin-top:50px;
-    display:flex;
-    gap:18px;
-}
-
-.btn{
-    text-decoration:none;
-    padding:15px 26px;
-    border-radius:10px;
-    font-weight:600;
-}
-
-.primary{
-    background:#111;
-    color:white;
-}
-
-.secondary{
-    border:1px solid #ddd;
-    color:#111;
-}
-
-section{
-    padding:100px 0;
-    border-top:1px solid #eee;
-}
-
-.section-title{
-    font-size:34px;
-    margin-bottom:35px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:24px;
-}
-
-.card{
-    border:1px solid #e8e8e8;
-    border-radius:18px;
-    padding:30px;
-    transition:.25s;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 40px rgba(0,0,0,.06);
-}
-
-.card h3{
-    margin-bottom:12px;
-    font-size:22px;
-}
-
-.card p{
-    color:#666;
-}
-
-.about{
-    max-width:850px;
-    font-size:19px;
-    color:#444;
-}
-
-.timeline{
-    display:flex;
-    flex-direction:column;
-    gap:35px;
-}
-
-.timeline-item{
-    display:flex;
-    gap:30px;
-}
-
-.year{
-    width:120px;
-    font-weight:700;
-    color:#2563eb;
-}
-
-.content h3{
-    margin-bottom:6px;
-}
-
+/* ---- Footer ---- */
 footer{
-    padding:70px 0;
-    border-top:1px solid #eee;
-    text-align:center;
-    color:#666;
+  margin-top:3.2rem;
+  padding-top:1.9rem;
+  border-top:1px solid var(--rule);
+}
+.footer-note{ margin:0; }
+
+/* ---- Small screens ---- */
+@media (max-width:34rem){
+  body{ padding-top:3rem; font-size:1.125rem; }
+  h1{ font-size:1.75rem; }
+  .entry{ grid-template-columns:1fr; gap:.15rem; }
+  .when{ padding-top:0; font-size:.875rem; }
 }
 
-@media(max-width:700px){
-
-.hero{
-padding-top:70px;
+/* ---- Print ---- */
+@media print{
+  :root{ --bg:#fff; --ink:#000; --muted:#333; --rule:#ccc; --link:#000; }
+  body{ max-width:none; padding:0; font-size:11pt; }
+  a{ text-decoration:none; }
 }
-
-.hero h1{
-font-size:46px;
-}
-
-.hero p{
-font-size:19px;
-}
-
-.timeline-item{
-flex-direction:column;
-gap:8px;
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<div class="container">
+<header class="masthead">
+  <h1>Surya Polisetty</h1>
+  <p class="lede">Co-founder &amp; CTO</p>
+  <p class="contact">
+    <a href="mailto:suryampolisetty@gmail.com">Email</a><span class="sep">&middot;</span><a href="https://www.linkedin.com/in/suryapolisetty">LinkedIn</a><span class="sep">&middot;</span><a href="Surya_Polisetty_Resume_2026.pdf">Résumé</a>
+  </p>
+</header>
 
-<nav>
+<main>
 
-<div class="logo">
-Surya Polisetty
+<div class="intro">
+  <p>I&rsquo;m the co-founder and CTO of Mindlabs. We build the hardware, firmware, cloud and AI systems that let companies see and act on what is happening across their physical operations, in real time. Since we started, that has become more than 100,000 IoT devices in the field and a business past $2M in revenue.</p>
+
+  <p>I&rsquo;m responsible for the technology end to end &mdash; circuit boards, embedded firmware, the distributed backend, and the AI layer on top of it, which is where most of my attention goes now &mdash; and for a good deal of what surrounds it: the engineering team, enterprise deployments, where and how we manufacture, what we charge. Very little of that came with the title. There isn&rsquo;t a layer on that list I haven&rsquo;t been deep inside, and not one I hold alone today.</p>
+
+  <p>The habit underneath all of that is starting beneath a problem rather than inside it &mdash; understanding why a thing is built the way it is before deciding what to do about it. It predates the job: two years of independent research in mathematical logic and physics, before I came back to industry. Building was never the point on its own; it is what tends to follow once you understand something well enough to see a better version of it.</p>
+
+  <p>What I have optimised for since is capability rather than comfort or title &mdash; being able to take on problems the earlier version of me could not have. If I can learn a thing, build it, or lead it, I have rarely found a good reason not to.</p>
 </div>
 
-<ul>
-<li><a href="#">About</a></li>
-<li><a href="#">Work</a></li>
-<li><a href="#">Research</a></li>
-<li><a href="#">Writing</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
+<section>
+  <h2>Some things I&rsquo;ve built</h2>
 
-</nav>
+  <div class="built">
+    <p><span class="org">A platform at fleet scale.</span> Device firmware, provisioning, over-the-air updates and a distributed backend carrying real-time telemetry from more than 100,000 deployed devices.</p>
 
-<section class="hero">
+    <p><span class="org">AI in production.</span> Leading AI integration across that platform, turning operational data into decisions rather than dashboards. Separately, I&rsquo;ve built agent systems directly on top of LLM APIs &mdash; planning, tool execution, memory, reasoning loops &mdash; rather than assembling them out of frameworks.</p>
 
-<h1>
-Building intelligent products from
-<span>first principles.</span>
-</h1>
+    <p><span class="org">An engineering organisation.</span> Hired and led multidisciplinary teams across hardware, embedded, cloud, web, mobile and AI &mdash; deliberately built so that they run without me in the room.</p>
 
-<p>
-I'm a technology leader and Co-founder & CTO of Mindlabs.
-I enjoy solving difficult engineering problems across hardware,
-embedded systems, cloud infrastructure, manufacturing and AI.
-</p>
+    <p><span class="org">The commercial side.</span> Enterprise relationships from first conversation through deployment and scale, pricing, and the unit economics underneath it.</p>
 
-<div class="buttons">
-
-<a class="btn primary" href="#">
-View Résumé
-</a>
-
-<a class="btn secondary" href="#">
-LinkedIn
-</a>
-
-</div>
-
+    <p><span class="org">Hardware into production.</span> Manufacturing set up from scratch in China  &mdash; vendor sourcing through to volume.</p>
+  </div>
 </section>
 
 <section>
+  <h2>Earlier</h2>
 
-<h2 class="section-title">
-About
-</h2>
+  <div class="entry">
+    <div class="when">2022 &ndash; 2023</div>
+    <div class="what">
+      <p class="line"><span class="org">Adapt Ideations</span> &mdash; Software Engineer</p>
+      <p class="note">Led full-stack development of the company&rsquo;s third-generation IoT platform, architecting core capabilities and improving performance, reliability and scale.</p>
+    </div>
+  </div>
 
-<div class="about">
+  <div class="entry">
+    <div class="when">2021 &ndash; 2022</div>
+    <div class="what">
+      <p class="line"><span class="org">Independent consulting</span> &mdash; Software Engineer</p>
+      <p class="note">Backend systems and web applications for an early-stage technology startup.</p>
+    </div>
+  </div>
 
-<p>
+  <div class="entry">
+    <div class="when">2019 &ndash; 2021</div>
+    <div class="what">
+      <p class="line"><span class="org">Independent research</span></p>
+      <p class="note">Fundamental physics and mathematical logic, working on the foundations rather than the applications.</p>
+    </div>
+  </div>
 
-After studying Electrical Engineering at IIT Indore, I left to pursue
-independent research in mathematical logic and fundamental physics.
-That experience shaped how I approach engineering today—starting from
-first principles rather than existing conventions.
-
-<br><br>
-
-Today I lead engineering at Mindlabs, where we've designed products from
-concept to production, built multidisciplinary engineering teams,
-established manufacturing in China, and deployed over 100,000 connected
-IoT devices worldwide.
-
-</p>
-
-</div>
-
+  <div class="entry">
+    <div class="when">2016 &ndash; 2019</div>
+    <div class="what">
+      <p class="line"><span class="org">IIT Indore</span> &mdash; B.Tech, Electrical Engineering</p>
+      <p class="note">Left to pursue independent research full-time. AIR 2842 (99.76 percentile), JEE Advanced 2016.</p>
+    </div>
+  </div>
 </section>
 
 <section>
+  <h2>What I&rsquo;m interested in</h2>
 
-<h2 class="section-title">
-What I Work On
-</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Embedded Systems</h3>
-<p>Firmware, RTOS, low-power design and connected devices.</p>
-</div>
-
-<div class="card">
-<h3>Hardware Design</h3>
-<p>Electronics, manufacturing and production engineering.</p>
-</div>
-
-<div class="card">
-<h3>Cloud Platforms</h3>
-<p>Distributed backend systems powering large IoT fleets.</p>
-</div>
-
-<div class="card">
-<h3>Artificial Intelligence</h3>
-<p>Building AI-powered operational systems and intelligent products.</p>
-</div>
-
-<div class="card">
-<h3>Product Strategy</h3>
-<p>Taking products from idea to mass production and scale.</p>
-</div>
-
-<div class="card">
-<h3>Research</h3>
-<p>Mathematical logic, physics and first-principles thinking.</p>
-</div>
-
-</div>
-
+  <ul class="interests">
+    <li>How companies actually get built &mdash; the pricing, the unit economics, the decisions that determine whether good engineering ever reaches a customer</li>
+    <li>Physical systems that sense, decide and act &mdash; and what it takes to make them dependable at scale</li>
+    <li>Agent architecture built from primitives rather than assembled from frameworks</li>
+    <li>AI that makes engineers more capable instead of replacing them</li>
+    <li>The mathematical foundations of computation and reasoning</li>
+    <li>Teams built so that they keep working when you step away from them</li>
+  </ul>
 </section>
 
 <section>
-
-<h2 class="section-title">
-Selected Journey
-</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-<div class="year">2016</div>
-<div class="content">
-<h3>IIT Indore</h3>
-<p>Electrical Engineering</p>
-</div>
-</div>
-
-<div class="timeline-item">
-<div class="year">2019</div>
-<div class="content">
-<h3>Independent Research</h3>
-<p>Mathematical Logic & Fundamental Physics</p>
-</div>
-</div>
-
-<div class="timeline-item">
-<div class="year">2022</div>
-<div class="content">
-<h3>Software Engineer</h3>
-<p>Backend systems and cloud platforms.</p>
-</div>
-</div>
-
-<div class="timeline-item">
-<div class="year">2023</div>
-<div class="content">
-<h3>Co-founder & CTO — Mindlabs</h3>
-<p>
-Scaled to $2M+ revenue, deployed 100,000+ connected IoT devices,
-built manufacturing in China and now leading AI initiatives.
-</p>
-</div>
-</div>
-
-</div>
-
+  <p>I&rsquo;m always glad to talk about engineering, AI, or the business of building hard products. If you&rsquo;re building something difficult, I&rsquo;d like to hear about it &mdash; <a href="mailto:suryampolisetty@gmail.com">suryampolisetty@gmail.com</a>.</p>
 </section>
 
-<section>
-
-<h2 class="section-title">
-Current Focus
-</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>AI for Industry</h3>
-<p>Making operational systems intelligent through large language models and automation.</p>
-</div>
-
-<div class="card">
-<h3>Engineering Leadership</h3>
-<p>Building high-performing teams capable of shipping complete products.</p>
-</div>
-
-<div class="card">
-<h3>Writing</h3>
-<p>Thoughts on engineering, startups, AI and first-principles thinking. Coming soon.</p>
-</div>
-
-</div>
-
-</section>
+</main>
 
 <footer>
-
-<h2>Let's build something meaningful.</h2>
-
-<br>
-
-<p>
-
-suryampolisetty@gmail.com
-
-<br><br>
-
-LinkedIn • GitHub • Google Scholar
-
-<br><br>
-
-© 2026 Surya Polisetty
-
-</p>
-
+  <p class="footer-note">&copy; <span id="year">1999</span> Surya Polisetty</p>
 </footer>
 
-</div>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
